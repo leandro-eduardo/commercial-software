@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="RelatorioIndicadoresRecebimento" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isSummaryWithPageHeaderAndFooter="true" uuid="cf380531-04ca-4305-a06b-7a9873b63886">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="UMUARDB"/>
+	<style name="Texto Arial 10" vTextAlign="Middle" vImageAlign="Middle" fontName="Arial" fontSize="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
+	<style name="Título Arial 12 Bold" vTextAlign="Middle" vImageAlign="Middle" fontName="Arial" fontSize="12" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
+	<style name="Título Arial 18 Bold" hTextAlign="Center" vTextAlign="Middle" vImageAlign="Middle" fontName="Arial" fontSize="18" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
+	<style name="Linha Cinza" forecolor="#000000">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style mode="Opaque" backcolor="#CCCCCC"/>
+		</conditionalStyle>
+	</style>
+	<subDataset name="Dataset1" uuid="aefda2ee-0693-42f9-8cc8-39c696537f99">
+		<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w1" value="470"/>
+		<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w2" value="523"/>
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="UMUARDB"/>
+		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+		<parameter name="CHARTSQL" class="java.lang.String" isForPrompting="false">
+			<defaultValueExpression><![CDATA[$P{CHARTSQL}]]></defaultValueExpression>
+		</parameter>
+		<queryString>
+			<![CDATA[$P!{CHARTSQL}]]>
+		</queryString>
+		<field name="CONTASPAGASFORADOPRAZO" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.label" value="CONTASPAGASFORADOPRAZO"/>
+		</field>
+		<field name="CONTASPAGASNOPRAZO" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.label" value="CONTASPAGASNOPRAZO"/>
+		</field>
+		<field name="SOMATOTAL" class="java.lang.Long">
+			<property name="com.jaspersoft.studio.field.label" value="SOMATOTAL"/>
+		</field>
+	</subDataset>
+	<parameter name="IDCLIENTE" class="java.lang.String"/>
+	<parameter name="DATA_INICIAL" class="java.util.Date"/>
+	<parameter name="DATA_FINAL" class="java.util.Date"/>
+	<parameter name="SQL" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[$P{SQL}]]></defaultValueExpression>
+	</parameter>
+	<parameter name="CHARTSQL" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[$P{CHARTSQL}]]></defaultValueExpression>
+	</parameter>
+	<parameter name="SQLSUBREPORT1" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[$P{SQLSUBREPORT1}]]></defaultValueExpression>
+	</parameter>
+	<parameter name="SQLSUBREPORT2" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[$P{SQLSUBREPORT2}]]></defaultValueExpression>
+	</parameter>
+	<parameter name="SQLSUBREPORT3" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[$P{SQLSUBREPORT3}]]></defaultValueExpression>
+	</parameter>
+	<parameter name="SUBREPORT1_DIR" class="java.net.URL"/>
+	<parameter name="SUBREPORT2_DIR" class="java.net.URL"/>
+	<parameter name="SUBREPORT3_DIR" class="java.net.URL"/>
+	<queryString language="SQL">
+		<![CDATA[$P!{SQL}]]>
+	</queryString>
+	<field name="IDCLIENTE" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="IDFORNECEDOR"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="PESSOA"/>
+	</field>
+	<field name="ID" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="ID"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="PARCELACONTAPAGAR"/>
+	</field>
+	<field name="VALOR" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="VALOR"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="PARCELACONTAPAGAR"/>
+	</field>
+	<field name="VALORTOTAL" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="VALORTOTAL"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="PAGAMENTO"/>
+	</field>
+	<field name="VENCIMENTO" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.label" value="VENCIMENTO"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="PARCELACONTAPAGAR"/>
+	</field>
+	<field name="DATA" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.label" value="DATA"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="PAGAMENTO"/>
+	</field>
+	<variable name="TOTALCONTAS" class="java.lang.Float"/>
+	<variable name="TOTALCONTASFORAPRAZO" class="java.lang.Float"/>
+	<variable name="TOTALCONTASEMABERTO" class="java.lang.Float"/>
+	<variable name="PERCENT" class="java.lang.Float">
+		<variableExpression><![CDATA[($V{TOTALCONTASFORAPRAZO}/($V{TOTALCONTAS} + $V{TOTALCONTASFORAPRAZO}))*100]]></variableExpression>
+	</variable>
+	<title>
+		<band height="297">
+			<staticText>
+				<reportElement style="Título Arial 18 Bold" mode="Transparent" x="0" y="2" width="555" height="35" forecolor="#0F0606" backcolor="#FFFFFF" uuid="77519a57-8e5e-4abd-902a-ec61b6fdf9aa"/>
+				<box>
+					<pen lineWidth="1.0" lineColor="#FFFFFF"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="Arial" size="18" isBold="true"/>
+					<paragraph lineSpacing="Double"/>
+				</textElement>
+				<text><![CDATA[INDICADORES DE RECEBIMENTOS]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="0" width="555" height="1" uuid="11ff7dce-9feb-40b0-bf39-9dc52c65bb1e"/>
+				<graphicElement>
+					<pen lineWidth="2.0"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="0" y="38" width="555" height="1" uuid="ab6a727f-e4aa-4351-a1a7-f7e4f896fb5f"/>
+				<graphicElement>
+					<pen lineWidth="2.0"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="0" y="89" width="555" height="1" uuid="3aea3e26-96b5-43d5-903b-f20c63e775e9"/>
+				<graphicElement>
+					<pen lineWidth="2.0"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="1" y="71" width="40" height="15" uuid="e5db4996-8f67-41e6-b497-4d641865dc36"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Período: ]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="41" y="71" width="56" height="15" uuid="7e12754b-31fe-4f5b-a780-3f216242764c"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{DATA_INICIAL} != null ? $P{DATA_INICIAL} : "01/01/1900"]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="105" y="71" width="56" height="15" uuid="61b2689f-5661-405b-8026-95425577e0dd"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{DATA_FINAL} != null ? $P{DATA_FINAL}  : new Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="93" y="71" width="10" height="15" uuid="3db02493-e8e4-4ae0-912a-ed38d26e6520"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[a]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="56" width="40" height="15" uuid="1a3d7409-c958-496e-baa8-abeb2cf6855c"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Cliente:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="41" y="56" width="189" height="15" uuid="747e9901-8823-41e4-a20a-915a54c8103e"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{IDCLIENTE}.equals("") ? "Todos" : $P{IDCLIENTE}]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement x="311" y="224" width="100" height="30" uuid="67b8ce2d-a55d-41ab-b62b-f6bc9571e28c"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="311" y="194" width="100" height="30" uuid="19750dec-9163-40b5-8e23-e09716cceea0"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="311" y="135" width="100" height="30" uuid="57e6e847-3e1b-45d6-ae6b-5405a54c0ca0"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="311" y="165" width="100" height="30" uuid="5c08742d-398c-4f38-8569-75511c81b67b"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="311" y="105" width="100" height="30" uuid="4e310b53-3cad-411c-a3eb-397177d9b9ea"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="161" y="224" width="150" height="30" uuid="73e71f83-5e32-4b06-aeb7-6fed83c251a3"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="161" y="194" width="150" height="30" uuid="8c87564b-af3a-410e-bf81-822437efa723"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="161" y="135" width="150" height="30" uuid="0225bf9a-f53c-460a-a65a-51b1fd5e0c82"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="161" y="165" width="150" height="30" uuid="8dbc17ea-99d9-4baa-812d-b4d58c3269eb"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="161" y="105" width="150" height="30" uuid="79326c68-78bb-4b6f-9253-eae88a10ad94"/>
+			</rectangle>
+			<textField evaluationTime="Auto" pattern="0" isBlankWhenNull="true">
+				<reportElement x="311" y="135" width="100" height="30" uuid="8c78040d-14de-47d5-911b-e4bb35965707"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$V{TOTALCONTASFORAPRAZO}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="165" y="105" width="146" height="30" uuid="044cd73d-9fc6-4bcf-a812-133d787ce8a0"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<text><![CDATA[Total de recebidas pagas no prazo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="165" y="135" width="146" height="30" uuid="99dd66c2-f49b-47f2-90e5-26a469082c6b"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<text><![CDATA[Total de contas recebidas com atraso]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="165" y="165" width="146" height="30" uuid="0dd0f387-7584-48ec-83f8-6c0dac000ec6"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<text><![CDATA[Total de contas recebidas]]></text>
+			</staticText>
+			<textField evaluationTime="Auto" pattern="0" isBlankWhenNull="true">
+				<reportElement x="311" y="165" width="100" height="30" uuid="bed55a9a-60fd-436f-afb2-b07a60ca70a9"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$V{TOTALCONTAS} + $V{TOTALCONTASFORAPRAZO}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="165" y="194" width="146" height="30" uuid="08c7a868-d30e-43b8-a385-0cec92d555e6"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<text><![CDATA[Total de contas a receber em aberto]]></text>
+			</staticText>
+			<textField evaluationTime="Auto" pattern="0" isBlankWhenNull="true">
+				<reportElement x="311" y="194" width="100" height="30" uuid="c14b9b19-4012-4779-a1d4-a740c697ee70"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$V{TOTALCONTASEMABERTO}]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Auto" pattern="#,##%" isBlankWhenNull="true">
+				<reportElement x="311" y="224" width="100" height="30" uuid="fe036eeb-4d33-426f-816b-7947d7fde99a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[($V{TOTALCONTASFORAPRAZO}/($V{TOTALCONTAS} + $V{TOTALCONTASFORAPRAZO}))*100]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="165" y="224" width="145" height="30" uuid="1eca273a-d094-4a35-9870-d40f41c49662"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Percentual de contas recebidas com atraso em relação ao total]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="271" width="555" height="1" uuid="1b700fd5-42c8-4b53-98dc-8b504511d49b"/>
+				<graphicElement>
+					<pen lineWidth="2.0"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement style="Título Arial 12 Bold" x="0" y="272" width="555" height="24" uuid="fd335879-0244-4762-8f83-6fa4119e7f2b"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[DETALHAMENTOS]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="296" width="555" height="1" uuid="10ab483a-9dee-4902-a939-f6b6677f3383"/>
+				<graphicElement>
+					<pen lineWidth="2.0"/>
+				</graphicElement>
+			</line>
+			<textField evaluationTime="Auto" pattern="0" isBlankWhenNull="true">
+				<reportElement x="311" y="105" width="100" height="30" uuid="6ec86d16-a920-4bef-8084-e64741bdfad6"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$V{TOTALCONTAS}]]></textFieldExpression>
+			</textField>
+			<pieChart>
+				<chart isShowLegend="true" evaluationTime="Report">
+					<reportElement x="0" y="110" width="150" height="144" uuid="d5ede024-70ad-463d-88b4-a388cee8122a"/>
+					<box>
+						<pen lineWidth="0.0"/>
+					</box>
+					<chartTitle/>
+					<chartSubtitle/>
+					<chartLegend position="Bottom"/>
+				</chart>
+				<pieDataset>
+					<dataset>
+						<datasetRun subDataset="Dataset1" uuid="37a3ef06-243e-411e-84d1-bff841f8fb53">
+							<datasetParameter name="CHARTSQL">
+								<datasetParameterExpression><![CDATA[$P{CHARTSQL}]]></datasetParameterExpression>
+							</datasetParameter>
+							<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+						</datasetRun>
+					</dataset>
+					<pieSeries>
+						<keyExpression><![CDATA[$F{CONTASPAGASFORADOPRAZO}]]></keyExpression>
+						<valueExpression><![CDATA[$F{CONTASPAGASFORADOPRAZO}]]></valueExpression>
+					</pieSeries>
+					<pieSeries>
+						<keyExpression><![CDATA[$F{CONTASPAGASNOPRAZO}]]></keyExpression>
+						<valueExpression><![CDATA[$F{CONTASPAGASNOPRAZO}]]></valueExpression>
+					</pieSeries>
+				</pieDataset>
+				<piePlot isCircular="true">
+					<plot>
+						<seriesColor seriesOrder="0" color="#2969F2"/>
+						<seriesColor seriesOrder="1" color="#DE2F32"/>
+					</plot>
+					<itemLabel/>
+				</piePlot>
+			</pieChart>
+		</band>
+	</title>
+	<pageFooter>
+		<band height="15">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="0" width="555" height="15" backcolor="#BABABA" uuid="247a26bf-578e-4a06-a8a5-48d69dcb1324"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textField>
+					<reportElement style="Texto Arial 10" mode="Transparent" x="366" y="0" width="170" height="15" backcolor="#FFFFFF" uuid="005f71b0-7f35-4007-aa8a-430ad956fc66"/>
+					<box>
+						<pen lineWidth="0.0" lineColor="#FFFFFF"/>
+					</box>
+					<textElement textAlignment="Right"/>
+					<textFieldExpression><![CDATA["Página "+$V{PAGE_NUMBER}+" de"]]></textFieldExpression>
+				</textField>
+				<textField evaluationTime="Report">
+					<reportElement style="Texto Arial 10" mode="Transparent" x="536" y="0" width="15" height="15" backcolor="#FFFFFF" uuid="c689f803-21c4-400c-8d2f-88fe66fc0dce"/>
+					<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField pattern="d MMMM, yyyy     HH:mm:ss">
+					<reportElement style="Texto Arial 10" x="10" y="0" width="150" height="15" uuid="fef0361d-c3e9-4b72-a886-cafb4b813f63"/>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="12">
+			<subreport>
+				<reportElement positionType="Float" x="-20" y="-17" width="575" height="29" uuid="fd7c8ebd-e04f-4537-96c2-cbc20961ea08"/>
+				<subreportParameter name="SQLSUBREPORT1">
+					<subreportParameterExpression><![CDATA[$P{SQLSUBREPORT1}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="SQLSUBREPORT2">
+					<subreportParameterExpression><![CDATA[$P{SQLSUBREPORT2}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="SQLSUBREPORT3">
+					<subreportParameterExpression><![CDATA[$P{SQLSUBREPORT3}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="SUBREPORT2_DIR">
+					<subreportParameterExpression><![CDATA[$P{SUBREPORT2_DIR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="SUBREPORT3_DIR">
+					<subreportParameterExpression><![CDATA[$P{SUBREPORT3_DIR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<returnValue subreportVariable="X" toVariable="TOTALCONTAS"/>
+				<returnValue subreportVariable="Y" toVariable="TOTALCONTASFORAPRAZO"/>
+				<returnValue subreportVariable="Z" toVariable="TOTALCONTASEMABERTO"/>
+				<subreportExpression><![CDATA[$P{SUBREPORT1_DIR}]]></subreportExpression>
+			</subreport>
+		</band>
+	</summary>
+</jasperReport>

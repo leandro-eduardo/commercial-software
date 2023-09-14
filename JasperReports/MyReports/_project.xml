@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>MyReports</name>
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+	</buildSpec>
+	<natures>
+	</natures>
+	<linkedResources>
+		<link>
+			<name>PedidoVenda.jasper</name>
+			<type>1</type>
+			<location>D:/Google Drive/Projetos NetBeans Java/UMUAR AR CONDICIONADO/JasperReports/PedidoVenda.jasper</location>
+		</link>
+		<link>
+			<name>PedidoVenda.jrxml</name>
+			<type>1</type>
+			<location>D:/Google Drive/Projetos NetBeans Java/UMUAR AR CONDICIONADO/JasperReports/PedidoVenda.jrxml</location>
+		</link>
+		<link>
+			<name>RelatorioComprasAnalitico.jasper</name>
+			<type>1</type>
+			<location>D:/Google Drive/Projetos NetBeans Java/UMUAR AR CONDICIONADO/JasperReports/RelatorioComprasAnalitico.jasper</location>
+		</link>
+		<link>
+			<name>RelatorioComprasAnalitico.jrxml</name>
+			<type>1</type>
+			<location>D:/Google Drive/Projetos NetBeans Java/UMUAR AR CONDICIONADO/JasperReports/RelatorioComprasAnalitico.jrxml</location>
+		</link>
+		<link>
+			<name>RelatorioComprasSintetico.jasper</name>
+			<type>1</type>
+			<location>D:/Google Drive/Projetos NetBeans Java/UMUAR AR CONDICIONADO/JasperReports/RelatorioComprasSintetico.jasper</location>
+		</link>
+		<link>
+			<name>RelatorioComprasSintetico.jrxml</name>
+			<type>1</type>
+			<location>D:/Google Drive/Projetos NetBeans Java/UMUAR AR CONDICIONADO/JasperReports/RelatorioComprasSintetico.jrxml</location>
+		</link>
+		<link>
+			<name>RelatorioContasPagarAnalitico.jasper</name>
+			<type>1</type>
+			<location>D:/Google Drive/Projetos NetBeans Java/UMUAR AR CONDICIONADO/JasperReports/RelatorioContasPagarAnalitico.jasper</location>
+		</link>
+		<link>
+			<name>RelatorioContasPagarAnalitico.jrxml</name>
+			<type>1</type>
+			<location>D:/Google Drive/Projetos NetBeans Java/UMUAR AR CONDICIONADO/JasperReports/RelatorioContasPagarAnalitico.jrxml</location>
+		</link>
+		<link>
+			<name>RelatorioContasPagarSintetico.jasper</name>
+			<type>1</type>
+			<location>D:/Google Drive/Projetos NetBeans Java/UMUAR AR CONDICIONADO/JasperReports/RelatorioContasPagarSintetico.jasper</location>
+		</link>
+		<link>
+			<name>RelatorioContasPagarSintetico.jrxml</name>
+			<type>1</type>
+			<location>D:/Google Drive/Projetos NetBeans Java/UMUAR AR CONDICIONADO/JasperReports/RelatorioContasPagarSintetico.jrxml</location>
+		</link>
+		<link>
+			<name>RelatorioContasReceberAnalitico.jasper</name>
+			<type>1</type>
+			<location>D:/Google Drive/Projetos NetBeans Java/UMUAR AR CONDICIONADO/JasperReports/RelatorioContasReceberAnalitico.jasper</location>
+		</link>
+		<link>
+			<name>RelatorioContasReceberAnalitico.jrxml</name>
+			<type>1</type>
+			<location>D:/Google Drive/Projetos NetBeans Java/UMUAR AR CONDICIONADO/JasperReports/RelatorioContasReceberAnalitico.jrxml</location>
+		</link>
+		<link>
+			<name>RelatorioContasReceberSintetico.jasper</name>
+			<type>1</type>
+			<location>D:/Google Drive/Projetos NetBeans Java/UMUAR AR CONDICIONADO/JasperReports/RelatorioContasReceberSintetico.jasper</location>
+		</link>
+		<link>
+			<name>RelatorioContasReceberSintetico.jrxml</name>
+			<type>1</type>
+			<location>D:/Google Drive/Projetos NetBeans Java/UMUAR AR CONDICIONADO/JasperReports/RelatorioContasReceberSintetico.jrxml</location>
+		</link>
+		<link>
+			<name>RelatorioFechamentoCaixa.jasper</name>
+			<type>1</type>
+			<location>D:/Google Drive/Projetos NetBeans Java/UMUAR AR CONDICIONADO/JasperReports/RelatorioFechamentoCaixa.jasper</location>
+		</link>
+		<link>
+			<name>RelatorioFechamentoCaixa.jrxml</name>
+			<type>1</type>
+			<location>D:/Google Drive/Projetos NetBeans Java/UMUAR AR CONDICIONADO/JasperReports/RelatorioFechamentoCaixa.jrxml</location>
+		</link>
+		<link>
+			<name>RelatorioInadimplenciasCliente.jasper</name>
+			<type>1</type>
+			<location>D:/Google Drive/Projetos NetBeans Java/UMUAR AR CONDICIONADO/JasperReports/RelatorioInadimplenciasCliente.jasper</location>
+		</link>
+		<link>
+			<name>RelatorioInadimplenciasCliente.jrxml</name>
+			<type>1</type>
+			<location>D:/Google Drive/Projetos NetBeans Java/UMUAR AR CONDICIONADO/JasperReports/RelatorioInadimplenciasCliente.jrxml</location>
+		</link>
+		<link>
+			<name>RelatorioIndicadoresPagamento.jasper</name>
+			<type>1</type>
+			<location>D:/Google Drive/Projetos NetBeans Java/UMUAR AR CONDICIONADO/JasperReports/RelatorioIndicadoresPagamento.jasper</location>
+		</link>
+		<link>
+			<name>RelatorioIndicadoresPagamento.jrxml</name>
+			<type>1</type>
+			<location>D:/Google Drive/Projetos NetBeans Java/UMUAR AR CONDICIONADO/JasperReports/RelatorioIndicadoresPagamento.jrxml</location>
+		</link>
+		<link>
+			<name>RelatorioIndicadoresRecebimento.jasper</name>
+			<type>1</type>
+			<location>D:/Google Drive/Projetos NetBeans Java/UMUAR AR CONDICIONADO/JasperReports/RelatorioIndicadoresRecebimento.jasper</location>
+		</link>
+		<link>
+			<name>RelatorioIndicadoresRecebimento.jrxml</name>
+			<type>1</type>
+			<location>D:/Google Drive/Projetos NetBeans Java/UMUAR AR CONDICIONADO/JasperReports/RelatorioIndicadoresRecebimento.jrxml</location>
+		</link>
+		<link>
+			<name>RelatorioPagamentosRecebimentos.jasper</name>
+			<type>1</type>
+			<location>D:/Google Drive/Projetos NetBeans Java/UMUAR AR CONDICIONADO/JasperReports/RelatorioPagamentosRecebimentos.jasper</location>
+		</link>
+		<link>
+			<name>RelatorioPagamentosRecebimentos.jrxml</name>
+			<type>1</type>
+			<location>D:/Google Drive/Projetos NetBeans Java/UMUAR AR CONDICIONADO/JasperReports/RelatorioPagamentosRecebimentos.jrxml</location>
+		</link>
+		<link>
+			<name>RelatorioPessoas.jasper</name>
+			<type>1</type>
+			<location>D:/Google Drive/Projetos NetBeans Java/UMUAR AR CONDICIONADO/JasperReports/RelatorioPessoas.jasper</location>
+		</link>
+		<link>
+			<name>RelatorioPessoas.jrxml</name>
+			<type>1</type>
+			<location>D:/Google Drive/Projetos NetBeans Java/UMUAR AR CONDICIONADO/JasperReports/RelatorioPessoas.jrxml</location>
+		</link>
+		<link>
+			<name>RelatorioProdutos.jasper</name>
+			<type>1</type>
+			<location>D:/Google Drive/Projetos NetBeans Java/UMUAR AR CONDICIONADO/JasperReports/RelatorioProdutos.jasper</location>
+		</link>
+		<link>
+			<name>RelatorioProdutos.jrxml</name>
+			<type>1</type>
+			<location>D:/Google Drive/Projetos NetBeans Java/UMUAR AR CONDICIONADO/JasperReports/RelatorioProdutos.jrxml</location>
+		</link>
+		<link>
+			<name>RelatorioProdutosMaisVendidos.jasper</name>
+			<type>1</type>
+			<location>D:/Google Drive/Projetos NetBeans Java/UMUAR AR CONDICIONADO/JasperReports/RelatorioProdutosMaisVendidos.jasper</location>
+		</link>
+		<link>
+			<name>RelatorioProdutosMaisVendidos.jrxml</name>
+			<type>1</type>
+			<location>D:/Google Drive/Projetos NetBeans Java/UMUAR AR CONDICIONADO/JasperReports/RelatorioProdutosMaisVendidos.jrxml</location>
+		</link>
+		<link>
+			<name>RelatorioVendasAnalitico.jasper</name>
+			<type>1</type>
+			<location>D:/Google Drive/Projetos NetBeans Java/UMUAR AR CONDICIONADO/JasperReports/RelatorioVendasAnalitico.jasper</location>
+		</link>
+		<link>
+			<name>RelatorioVendasAnalitico.jrxml</name>
+			<type>1</type>
+			<location>D:/Google Drive/Projetos NetBeans Java/UMUAR AR CONDICIONADO/JasperReports/RelatorioVendasAnalitico.jrxml</location>
+		</link>
+		<link>
+			<name>RelatorioVendasSintetico.jasper</name>
+			<type>1</type>
+			<location>D:/Google Drive/Projetos NetBeans Java/UMUAR AR CONDICIONADO/JasperReports/RelatorioVendasSintetico.jasper</location>
+		</link>
+		<link>
+			<name>RelatorioVendasSintetico.jrxml</name>
+			<type>1</type>
+			<location>D:/Google Drive/Projetos NetBeans Java/UMUAR AR CONDICIONADO/JasperReports/RelatorioVendasSintetico.jrxml</location>
+		</link>
+		<link>
+			<name>SubRelatorioInadimplenciasCliente.jasper</name>
+			<type>1</type>
+			<location>D:/Google Drive/Projetos NetBeans Java/UMUAR AR CONDICIONADO/JasperReports/SubRelatorioInadimplenciasCliente.jasper</location>
+		</link>
+		<link>
+			<name>SubRelatorioInadimplenciasCliente.jrxml</name>
+			<type>1</type>
+			<location>D:/Google Drive/Projetos NetBeans Java/UMUAR AR CONDICIONADO/JasperReports/SubRelatorioInadimplenciasCliente.jrxml</location>
+		</link>
+		<link>
+			<name>SubRelatorioIndicadoresPagtosForaPrazo.jasper</name>
+			<type>1</type>
+			<location>D:/Google Drive/Projetos NetBeans Java/UMUAR AR CONDICIONADO/JasperReports/SubRelatorioIndicadoresPagtosForaPrazo.jasper</location>
+		</link>
+		<link>
+			<name>SubRelatorioIndicadoresPagtosForaPrazo.jrxml</name>
+			<type>1</type>
+			<location>D:/Google Drive/Projetos NetBeans Java/UMUAR AR CONDICIONADO/JasperReports/SubRelatorioIndicadoresPagtosForaPrazo.jrxml</location>
+		</link>
+		<link>
+			<name>SubRelatorioIndicadoresPagtosPendentes.jasper</name>
+			<type>1</type>
+			<location>D:/Google Drive/Projetos NetBeans Java/UMUAR AR CONDICIONADO/JasperReports/SubRelatorioIndicadoresPagtosPendentes.jasper</location>
+		</link>
+		<link>
+			<name>SubRelatorioIndicadoresPagtosPendentes.jrxml</name>
+			<type>1</type>
+			<location>D:/Google Drive/Projetos NetBeans Java/UMUAR AR CONDICIONADO/JasperReports/SubRelatorioIndicadoresPagtosPendentes.jrxml</location>
+		</link>
+		<link>
+			<name>SubRelatorioIndicadoresPagtosPrazo.jasper</name>
+			<type>1</type>
+			<location>D:/Google Drive/Projetos NetBeans Java/UMUAR AR CONDICIONADO/JasperReports/SubRelatorioIndicadoresPagtosPrazo.jasper</location>
+		</link>
+		<link>
+			<name>SubRelatorioIndicadoresPagtosPrazo.jrxml</name>
+			<type>1</type>
+			<location>D:/Google Drive/Projetos NetBeans Java/UMUAR AR CONDICIONADO/JasperReports/SubRelatorioIndicadoresPagtosPrazo.jrxml</location>
+		</link>
+		<link>
+			<name>SubRelatorioIndicadoresRecbtosForaPrazo.jasper</name>
+			<type>1</type>
+			<location>D:/Google Drive/Projetos NetBeans Java/UMUAR AR CONDICIONADO/JasperReports/SubRelatorioIndicadoresRecbtosForaPrazo.jasper</location>
+		</link>
+		<link>
+			<name>SubRelatorioIndicadoresRecbtosForaPrazo.jrxml</name>
+			<type>1</type>
+			<location>D:/Google Drive/Projetos NetBeans Java/UMUAR AR CONDICIONADO/JasperReports/SubRelatorioIndicadoresRecbtosForaPrazo.jrxml</location>
+		</link>
+		<link>
+			<name>SubRelatorioIndicadoresRecbtosPendentes.jasper</name>
+			<type>1</type>
+			<location>D:/Google Drive/Projetos NetBeans Java/UMUAR AR CONDICIONADO/JasperReports/SubRelatorioIndicadoresRecbtosPendentes.jasper</location>
+		</link>
+		<link>
+			<name>SubRelatorioIndicadoresRecbtosPendentes.jrxml</name>
+			<type>1</type>
+			<location>D:/Google Drive/Projetos NetBeans Java/UMUAR AR CONDICIONADO/JasperReports/SubRelatorioIndicadoresRecbtosPendentes.jrxml</location>
+		</link>
+		<link>
+			<name>SubRelatorioIndicadoresRecbtosPrazo.jasper</name>
+			<type>1</type>
+			<location>D:/Google Drive/Projetos NetBeans Java/UMUAR AR CONDICIONADO/JasperReports/SubRelatorioIndicadoresRecbtosPrazo.jasper</location>
+		</link>
+		<link>
+			<name>SubRelatorioIndicadoresRecbtosPrazo.jrxml</name>
+			<type>1</type>
+			<location>D:/Google Drive/Projetos NetBeans Java/UMUAR AR CONDICIONADO/JasperReports/SubRelatorioIndicadoresRecbtosPrazo.jrxml</location>
+		</link>
+		<link>
+			<name>SubRelatorioItensCompra.jasper</name>
+			<type>1</type>
+			<location>D:/Google Drive/Projetos NetBeans Java/UMUAR AR CONDICIONADO/JasperReports/SubRelatorioItensCompra.jasper</location>
+		</link>
+		<link>
+			<name>SubRelatorioItensCompra.jrxml</name>
+			<type>1</type>
+			<location>D:/Google Drive/Projetos NetBeans Java/UMUAR AR CONDICIONADO/JasperReports/SubRelatorioItensCompra.jrxml</location>
+		</link>
+		<link>
+			<name>SubRelatorioItensPedidoVenda.jasper</name>
+			<type>1</type>
+			<location>D:/Google Drive/Projetos NetBeans Java/UMUAR AR CONDICIONADO/JasperReports/SubRelatorioItensPedidoVenda.jasper</location>
+		</link>
+		<link>
+			<name>SubRelatorioItensPedidoVenda.jrxml</name>
+			<type>1</type>
+			<location>D:/Google Drive/Projetos NetBeans Java/UMUAR AR CONDICIONADO/JasperReports/SubRelatorioItensPedidoVenda.jrxml</location>
+		</link>
+		<link>
+			<name>SubRelatorioItensVenda.jasper</name>
+			<type>1</type>
+			<location>D:/Google Drive/Projetos NetBeans Java/UMUAR AR CONDICIONADO/JasperReports/SubRelatorioItensVenda.jasper</location>
+		</link>
+		<link>
+			<name>SubRelatorioItensVenda.jrxml</name>
+			<type>1</type>
+			<location>D:/Google Drive/Projetos NetBeans Java/UMUAR AR CONDICIONADO/JasperReports/SubRelatorioItensVenda.jrxml</location>
+		</link>
+		<link>
+			<name>SubRelatorioMovimentosCaixa.jasper</name>
+			<type>1</type>
+			<location>D:/Google Drive/Projetos NetBeans Java/UMUAR AR CONDICIONADO/JasperReports/SubRelatorioMovimentosCaixa.jasper</location>
+		</link>
+		<link>
+			<name>SubRelatorioMovimentosCaixa.jrxml</name>
+			<type>1</type>
+			<location>D:/Google Drive/Projetos NetBeans Java/UMUAR AR CONDICIONADO/JasperReports/SubRelatorioMovimentosCaixa.jrxml</location>
+		</link>
+		<link>
+			<name>SubRelatorioParcelasContaPagar.jasper</name>
+			<type>1</type>
+			<location>D:/Google Drive/Projetos NetBeans Java/UMUAR AR CONDICIONADO/JasperReports/SubRelatorioParcelasContaPagar.jasper</location>
+		</link>
+		<link>
+			<name>SubRelatorioParcelasContaPagar.jrxml</name>
+			<type>1</type>
+			<location>D:/Google Drive/Projetos NetBeans Java/UMUAR AR CONDICIONADO/JasperReports/SubRelatorioParcelasContaPagar.jrxml</location>
+		</link>
+		<link>
+			<name>SubRelatorioParcelasContaReceber.jasper</name>
+			<type>1</type>
+			<location>D:/Google Drive/Projetos NetBeans Java/UMUAR AR CONDICIONADO/JasperReports/SubRelatorioParcelasContaReceber.jasper</location>
+		</link>
+		<link>
+			<name>SubRelatorioParcelasContaReceber.jrxml</name>
+			<type>1</type>
+			<location>D:/Google Drive/Projetos NetBeans Java/UMUAR AR CONDICIONADO/JasperReports/SubRelatorioParcelasContaReceber.jrxml</location>
+		</link>
+	</linkedResources>
+</projectDescription>

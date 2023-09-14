@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="SubRelatorioMovimentosCaixa" pageWidth="595" pageHeight="842" whenNoDataType="NoDataSection" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="cd87f128-2841-4026-be74-8c0cbb347b40">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="UMUARDB"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<style name="Linha Cinza" forecolor="#000000">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style mode="Opaque" backcolor="#CCCCCC"/>
+		</conditionalStyle>
+	</style>
+	<parameter name="IDCAIXA" class="java.lang.Integer"/>
+	<queryString>
+		<![CDATA[SELECT * FROM MOVIMENTOCAIXA
+WHERE MOVIMENTOCAIXA.IDCAIXA = $P{IDCAIXA}]]>
+	</queryString>
+	<field name="ID" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="ID"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="MOVIMENTOCAIXA"/>
+	</field>
+	<field name="DESCRICAO" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="DESCRICAO"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="MOVIMENTOCAIXA"/>
+	</field>
+	<field name="DEBITOCREDITO" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="DEBITOCREDITO"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="MOVIMENTOCAIXA"/>
+	</field>
+	<field name="VALOR" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="VALOR"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="MOVIMENTOCAIXA"/>
+	</field>
+	<field name="DATA" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.label" value="DATA"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="MOVIMENTOCAIXA"/>
+	</field>
+	<field name="HORATRANSACAO" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.label" value="HORATRANSACAO"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="MOVIMENTOCAIXA"/>
+	</field>
+	<field name="IDCAIXA" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="IDCAIXA"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="MOVIMENTOCAIXA"/>
+	</field>
+	<field name="IDPAGAMENTO" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="IDPAGAMENTO"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="MOVIMENTOCAIXA"/>
+	</field>
+	<field name="IDRECEBIMENTO" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="IDRECEBIMENTO"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="MOVIMENTOCAIXA"/>
+	</field>
+	<variable name="SOMAENTRADAS" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{DEBITOCREDITO}.equals("D") && !$F{DESCRICAO}.equals("MOV. ABERTURA DE CAIXA") ? $F{VALOR} : 0]]></variableExpression>
+	</variable>
+	<variable name="SOMASAIDAS" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{DEBITOCREDITO}.equals("C") && !$F{DESCRICAO}.equals("MOV. FECHAMENTO DE CAIXA")  ? $F{VALOR} : 0]]></variableExpression>
+	</variable>
+	<variable name="SALDO" class="java.math.BigDecimal">
+		<variableExpression><![CDATA[$V{SOMAENTRADAS}.subtract($V{SOMASAIDAS})]]></variableExpression>
+	</variable>
+	<variable name="TOTALMOVIMENTOS" class="java.lang.Integer" calculation="Count">
+		<variableExpression><![CDATA[$F{ID}]]></variableExpression>
+	</variable>
+	<columnHeader>
+		<band height="20">
+			<staticText>
+				<reportElement x="342" y="-13" width="101" height="20" uuid="42f9592f-3072-4447-8f13-67c52b5fb1db"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Data/Hora]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="503" y="-13" width="45" height="20" uuid="5f1adb3c-8f1d-4f4a-a70d-60419cef5ddf"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Rcbto]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="221" y="-13" width="39" height="20" uuid="9b7a4c51-1c1d-4e57-bd1c-3a1c0387e2ec"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tipo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="268" y="-13" width="58" height="20" uuid="6ec97b96-b161-4a00-81bf-096e2d54a2b2"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Valor]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="450" y="-13" width="45" height="20" uuid="901407ad-c7bf-4517-be15-0503768d74f4"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Pgto]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="40" y="-13" width="181" height="20" uuid="397cdcc1-bff6-4549-aa98-29711b6b15f2"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Descrição dos movimentos]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="3" y="-13" width="31" height="20" uuid="88bcb3c1-2fd4-4828-ba97-a65f3ad2d116"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Ref.]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="-13" width="555" height="1" uuid="e3bf8348-ce8a-492a-9e1d-bc09dcbda7c3"/>
+			</line>
+			<line>
+				<reportElement x="0" y="6" width="555" height="1" uuid="38f30ca4-9926-43db-912c-6964fd6bbc84"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="15" splitType="Stretch">
+			<frame>
+				<reportElement style="Linha Cinza" x="0" y="-13" width="554" height="15" uuid="87289cc8-145a-46f2-b8d2-158ec377824b"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid" lineColor="#FFFFFF"/>
+				</box>
+				<textField>
+					<reportElement x="221" y="0" width="39" height="15" uuid="7fdac6b0-e099-4913-bd3b-eaa44eae8b0d"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="10"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{DEBITOCREDITO}.equals("D") ? "Entrada" : "Saída"]]></textFieldExpression>
+				</textField>
+				<textField pattern="dd/MM/yyyy">
+					<reportElement x="346" y="0" width="59" height="15" uuid="adfec5f0-667a-4323-b19b-77bb64e354be"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{DATA}]]></textFieldExpression>
+				</textField>
+				<textField pattern="HH:mm:ss">
+					<reportElement x="400" y="0" width="40" height="15" uuid="720e3b8e-4d7b-47a3-bdcf-efe3ec0f0315"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{HORATRANSACAO}]]></textFieldExpression>
+				</textField>
+				<textField pattern="#,##0.00">
+					<reportElement x="268" y="0" width="58" height="15" uuid="845edd44-b1c6-410f-bf82-d1b3bf243433">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="480e9479-9a31-4f42-b091-ae6c6eaf1e95"/>
+					</reportElement>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="10"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{VALOR}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="503" y="0" width="45" height="15" uuid="cb413976-8e26-4f8e-88ad-90c63226b538">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5dd8bb67-4379-4fec-aa27-502cfeb9e6e5"/>
+					</reportElement>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="10"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{IDRECEBIMENTO} == null ? "" : $F{IDRECEBIMENTO}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="450" y="0" width="45" height="15" uuid="0e6243cf-5faa-4bf4-b0a1-282c027b4361">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5dd8bb67-4379-4fec-aa27-502cfeb9e6e5"/>
+					</reportElement>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="10"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{IDPAGAMENTO} == null ? "" : $F{IDPAGAMENTO}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="40" y="0" width="181" height="15" uuid="b63eebbd-1817-4fe3-ba79-04ab73a93213"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{DESCRICAO}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="3" y="0" width="31" height="15" uuid="aefa536e-feef-456a-b36b-f9059c2f03b1">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="192b2beb-af14-40d5-b4bc-2b1a690ea825"/>
+					</reportElement>
+					<textElement verticalAlignment="Middle">
+						<font size="10"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{ID}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<summary>
+		<band height="27">
+			<staticText>
+				<reportElement x="386" y="-7" width="101" height="15" uuid="309f6102-7289-48da-b7ec-6d7b742bf2b1"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<text><![CDATA[Total Entradas:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="386" y="8" width="101" height="15" uuid="335440f9-ab11-4b89-88ef-b4e20d74784a"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<text><![CDATA[Total Saídas:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="26" width="555" height="1" uuid="287cc16c-b5bf-4968-8cb3-f85c9b59e2de"/>
+			</line>
+			<textField pattern="¤#,##0.00;¤-#,##0.00">
+				<reportElement x="487" y="-7" width="65" height="15" uuid="42afbbb5-473b-4a96-b829-ab2947322b6a"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{SOMAENTRADAS}]]></textFieldExpression>
+			</textField>
+			<textField pattern="¤#,##0.00;¤-#,##0.00">
+				<reportElement x="487" y="8" width="65" height="15" uuid="3a8b6007-5437-439a-862c-cb1f8aa98eaa"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$V{SOMASAIDAS}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="-10" width="555" height="1" uuid="eb13a1de-9cd7-4ed9-a847-1f86b7b847d2"/>
+			</line>
+			<staticText>
+				<reportElement x="0" y="-7" width="60" height="15" uuid="1db677d2-7a6b-477b-bf60-53ac224251f4"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<text><![CDATA[Movimentos:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="60" y="-7" width="50" height="15" uuid="9a62d062-9e00-4ca8-8ddd-71a462e08dc7"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$V{TOTALMOVIMENTOS}]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>

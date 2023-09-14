@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="SubRelatorioIndicadoresPagtosForaPrazo" pageWidth="595" pageHeight="842" whenNoDataType="NoDataSection" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="cd87f128-2841-4026-be74-8c0cbb347b40">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="UMUARDB"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<parameter name="SQLSUBREPORT2" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[$P{SQLSUBREPORT2}]]></defaultValueExpression>
+	</parameter>
+	<parameter name="SQLSUBREPORT3" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[$P{SQLSUBREPORT3}]]></defaultValueExpression>
+	</parameter>
+	<parameter name="SUBREPORT3_DIR" class="java.net.URL"/>
+	<queryString>
+		<![CDATA[$P!{SQLSUBREPORT2}]]>
+	</queryString>
+	<field name="ID" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="ID"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="PARCELACONTAPAGAR"/>
+	</field>
+	<field name="IDFORNECEDOR" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="IDFORNECEDOR"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="PESSOA"/>
+	</field>
+	<field name="IDNOMEPESSOA" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="IDNOMEPESSOA"/>
+	</field>
+	<field name="VALOR" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="VALOR"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="PARCELACONTAPAGAR"/>
+	</field>
+	<field name="VALORTOTAL" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="VALORTOTAL"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="PAGAMENTO"/>
+	</field>
+	<field name="VENCIMENTO" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.label" value="VENCIMENTO"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="PARCELACONTAPAGAR"/>
+	</field>
+	<field name="DATA" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.label" value="DATA"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="PAGAMENTO"/>
+	</field>
+	<variable name="X" class="java.lang.Float" calculation="Count">
+		<variableExpression><![CDATA[$F{ID}]]></variableExpression>
+	</variable>
+	<variable name="Y" class="java.lang.Float"/>
+	<variable name="SOMAVALORTOTAL" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{VALOR}]]></variableExpression>
+	</variable>
+	<variable name="SOMAVALORPAGO" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{VALORTOTAL}]]></variableExpression>
+	</variable>
+	<pageHeader>
+		<band height="18">
+			<staticText>
+				<reportElement x="0" y="0" width="126" height="15" uuid="3ca72f1a-9ca5-40fe-b048-89255652f0bc"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Contas pagas com atraso:]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="20">
+			<frame>
+				<reportElement x="0" y="0" width="554" height="20" uuid="6f4f1697-615a-48d5-93ec-00e9bbdc45ad"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<staticText>
+					<reportElement x="430" y="0" width="60" height="20" uuid="2c44e427-2235-4df8-9ccd-7eb4ce3bcfc6"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Valor Total ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="260" y="0" width="85" height="20" uuid="32d39154-b2be-4a7b-a98f-8735cfb25d40"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Data Pagamento]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="345" y="0" width="85" height="20" uuid="7f0aa01b-decd-4ef3-a691-972a80ab9781"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Vencimento]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="490" y="0" width="62" height="20" uuid="0200ee34-e02f-426a-8c75-197af4cae1cf"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Valor Pago]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="0" width="40" height="20" uuid="4351dded-b558-454a-8941-32f548c9d9ab"/>
+					<textElement verticalAlignment="Middle">
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[ Ref.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="40" y="0" width="220" height="20" uuid="f8c4b1f2-a182-4056-9320-05b5e64d2c2f"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Fornecedor]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="15" splitType="Stretch">
+			<textField pattern="#,##0.00">
+				<reportElement x="430" y="0" width="60" height="15" uuid="02560e49-29c8-4ceb-9535-4d4ecec7105c">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="55cfcb24-7b51-4540-8d83-a9ba8e4fd4ae"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{VALOR}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="345" y="0" width="85" height="15" uuid="c0ce630f-be5d-41f6-afc0-59cb36e47aeb">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="7d632675-1442-4675-8027-9285d65ca32d"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{VENCIMENTO}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="260" y="0" width="85" height="15" uuid="3774068f-85b8-4f90-8b83-b920df17a8ec">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="7ef1be10-ab38-45e9-8606-de4476f61cfa"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{DATA}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00">
+				<reportElement x="490" y="0" width="62" height="15" uuid="640a2da5-e023-493c-98a1-e89917dee422"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{VALORTOTAL}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="0" width="40" height="15" uuid="8970af36-4afb-41a7-a819-8311904d8ded">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="192b2beb-af14-40d5-b4bc-2b1a690ea825"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[" " + $F{ID}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="40" y="0" width="210" height="15" uuid="46b15dfc-9360-4192-baec-e3df1a56d2c0">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="192b2beb-af14-40d5-b4bc-2b1a690ea825"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{IDNOMEPESSOA}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band height="65">
+			<subreport>
+				<reportElement x="-20" y="28" width="575" height="37" uuid="3df44896-f9ad-4314-82db-0a5fa7080c0d"/>
+				<subreportParameter name="SQLSUBREPORT3">
+					<subreportParameterExpression><![CDATA[$P{SQLSUBREPORT3}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<returnValue subreportVariable="X" toVariable="Y"/>
+				<subreportExpression><![CDATA[$P{SUBREPORT3_DIR}]]></subreportExpression>
+			</subreport>
+			<line>
+				<reportElement x="0" y="44" width="555" height="1" uuid="a9277679-abba-47c3-ac36-5179d7ec77d2"/>
+			</line>
+			<line>
+				<reportElement x="0" y="0" width="555" height="1" uuid="cc91b839-2111-4ca2-bef2-994f53611c1e"/>
+			</line>
+			<line>
+				<reportElement x="0" y="16" width="555" height="1" uuid="75bf1efa-b3d5-49bc-8584-aa57fb14af31"/>
+			</line>
+			<frame>
+				<reportElement mode="Opaque" x="0" y="1" width="555" height="15" backcolor="#DBD5D5" uuid="2dfc6f28-fe94-457d-83e8-219f29df03a3"/>
+				<box>
+					<pen lineWidth="0.0" lineStyle="Solid"/>
+				</box>
+				<textField pattern="0">
+					<reportElement x="173" y="0" width="50" height="15" uuid="ee529802-76a0-43f4-afaa-5a18c36cdbf5"/>
+					<textElement verticalAlignment="Middle">
+						<font isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{X}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="3" y="0" width="170" height="15" uuid="209e8929-ebad-48e3-aef2-ea911c2e9fa9"/>
+					<textElement verticalAlignment="Middle">
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Total de contas pagas com atraso:]]></text>
+				</staticText>
+				<textField pattern="#,##0.00">
+					<reportElement x="430" y="0" width="60" height="15" uuid="1ffb3411-686e-442d-9b4d-0acd44002c08"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{SOMAVALORTOTAL}]]></textFieldExpression>
+				</textField>
+				<textField pattern="#,##0.00">
+					<reportElement x="490" y="0" width="62" height="15" uuid="b8180761-a6a7-44ea-bfa1-22dbd290cc83"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{SOMAVALORPAGO}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</summary>
+</jasperReport>

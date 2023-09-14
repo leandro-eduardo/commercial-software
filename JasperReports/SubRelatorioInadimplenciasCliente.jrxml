@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="SubRelatorioInadimplenciasCliente" pageWidth="595" pageHeight="842" whenNoDataType="NoDataSection" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="cd87f128-2841-4026-be74-8c0cbb347b40">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="UMUARDB"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<parameter name="IDCLIENTE" class="java.lang.Integer"/>
+	<queryString>
+		<![CDATA[SELECT PARCELACONTARECEBER.ID, PESSOA.ID || ' - ' || PESSOA.NOMERAZAOSOCIAL AS IDNOMEPESSOA, PARCELACONTARECEBER.VENCIMENTO,
+PARCELACONTARECEBER.IDCONTARECEBER, PARCELACONTARECEBER.PARCELAS, PARCELACONTARECEBER.VALORPENDENTE
+FROM PARCELACONTARECEBER
+INNER JOIN CONTARECEBER ON CONTARECEBER.ID = PARCELACONTARECEBER.IDCONTARECEBER
+INNER JOIN PESSOA ON PESSOA.ID = CONTARECEBER.IDPESSOA
+WHERE PESSOA.ID =  $P{IDCLIENTE} 
+AND PARCELACONTARECEBER.VENCIMENTO < CURRENT_DATE AND PARCELACONTARECEBER.QUITADA = 'N']]>
+	</queryString>
+	<field name="ID" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="ID"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="PARCELACONTARECEBER"/>
+	</field>
+	<field name="IDNOMEPESSOA" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="IDNOMEPESSOA"/>
+	</field>
+	<field name="VENCIMENTO" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.label" value="VENCIMENTO"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="PARCELACONTARECEBER"/>
+	</field>
+	<field name="IDCONTARECEBER" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="IDCONTARECEBER"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="PARCELACONTARECEBER"/>
+	</field>
+	<field name="PARCELAS" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="PARCELAS"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="PARCELACONTARECEBER"/>
+	</field>
+	<field name="VALORPENDENTE" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="VALORPENDENTE"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="PARCELACONTARECEBER"/>
+	</field>
+	<variable name="TOTAL" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{VALORPENDENTE}]]></variableExpression>
+	</variable>
+	<columnHeader>
+		<band height="20">
+			<frame>
+				<reportElement x="0" y="0" width="555" height="20" uuid="482cde14-216f-4912-abac-7285f7dcc306"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<staticText>
+					<reportElement x="3" y="0" width="66" height="20" uuid="bce5f0f0-de2d-419d-bfb9-e0e07eb57446"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="10" isBold="true"/>
+					</textElement>
+					<text><![CDATA[REFERÊNCIA]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="96" y="0" width="97" height="20" uuid="c5e667e7-7a43-4ce6-9a43-d5bc899e80e9"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="10" isBold="true"/>
+					</textElement>
+					<text><![CDATA[CONTA RECEBER]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="245" y="0" width="78" height="20" uuid="13a258de-35e5-4bc6-a527-5e56571f1cd2"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="10" isBold="true"/>
+					</textElement>
+					<text><![CDATA[VENCIMENTO]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="359" y="0" width="60" height="20" uuid="7d8f47df-0fe9-48e5-afa8-36a1ee3094c8"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="10" isBold="true"/>
+					</textElement>
+					<text><![CDATA[PARCELA]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="470" y="0" width="81" height="20" uuid="a7f3f696-3055-4067-839a-1d11e33e6db2"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="Arial" size="10" isBold="true"/>
+					</textElement>
+					<text><![CDATA[VALOR]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="15" splitType="Stretch">
+			<textField>
+				<reportElement x="3" y="0" width="66" height="15" uuid="fffa0210-83bd-4974-8342-ff1c3e1748fe">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a0fd015d-9e98-44b3-94db-e78b0b5ca18c"/>
+				</reportElement>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ID}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="359" y="0" width="60" height="15" uuid="3b0e076e-940d-4e87-9feb-810eed6e1ff5">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="92286570-ec94-47aa-bfd4-386bc18fc9f3"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{PARCELAS}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00">
+				<reportElement x="470" y="0" width="81" height="15" uuid="fd8c8845-5747-4036-b930-248b011a96c1"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Arial" size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{VALORPENDENTE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="96" y="0" width="97" height="15" uuid="08ac2ff6-463e-402e-a063-f2ea0b2d58c9"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{IDCONTARECEBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="245" y="0" width="78" height="15" uuid="5987fc4f-8569-44a7-a58a-eb1a6ff9eb16"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{VENCIMENTO}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band height="16">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="1" width="555" height="15" backcolor="#DBD5D5" uuid="1f71af09-4da6-44ed-bb19-58d55fdc940c"/>
+				<box>
+					<pen lineWidth="0.0" lineStyle="Solid"/>
+				</box>
+				<line>
+					<reportElement x="0" y="15" width="555" height="1" uuid="73cc23e9-545b-4e4c-a917-8b27c028d311"/>
+				</line>
+				<staticText>
+					<reportElement x="367" y="0" width="103" height="15" uuid="309f6102-7289-48da-b7ec-6d7b742bf2b1"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[TOTAL]]></text>
+				</staticText>
+				<textField pattern="#,##0.00">
+					<reportElement x="470" y="0" width="80" height="15" uuid="6bade3f3-1c55-4932-a8ef-b60c42c70c68"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{TOTAL}]]></textFieldExpression>
+				</textField>
+				<line>
+					<reportElement x="0" y="-1" width="555" height="1" uuid="1d3fe0b7-33a0-40e1-ac72-7ebf42d5b597"/>
+				</line>
+			</frame>
+		</band>
+	</summary>
+</jasperReport>
